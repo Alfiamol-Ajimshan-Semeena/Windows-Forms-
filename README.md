@@ -35,3 +35,27 @@ as a database to persist favorites and settings. This will definitely allow work
 application independently, without using an external database server. Storing history data in text 
 files and using asynchronous operations enhanced the performance and let the content load 
 smoothly.
+# User guide
+The application is designed using a pretty standard user experience to make it easier for users to 
+accomplish their tasks using the browser. Users can go to a web page by writing the URL text in 
+the URL text box and then pressing either the “GO” button or Enter. Adding a favorite is pretty 
+simple; after entering a URL, users can click on “Add to Favorites” to save it. The saved favorites 
+will appear in a listbox where any clicked item will load the associated webpage. History is tracked 
+automatically and shown in another list; users can go back to the previously opened pages by just 
+clicking on them. Application supports bulk download, accessible through “Bulk Download” 
+button, where user can select the text file containing the multiple URLs. The Dark Mode checkbox 
+should toggle light and dark themes upon one click of the user so that he may adjust the interface 
+accordingly.  
+# Developer guide
+The code is structured in this application such that Form1 serves as the main class, incorporating 
+the user interface as well as the core functionality, while the Favourites class fills in the role of a 
+data structure for each favorite item. HTTP requests and communication are mediated through 
+an instance of the HTTP Client class, which is an asynchronous web request handler that ensures 
+the application remains responsive while loading content. For the purpose of persistence, SQLite 
+was utilized to manage favorites and homepage settings. SQLite was utilized to manage favorites 
+and homepage settings. SQLite provides a lightweight and embedded database facility. History is 
+persisted in a text file for ease of ease of use and retrieval. The application’s GUI was developed 
+in Windows Forms, making use of varied controls: text boxes, list boxes, and buttons to compose 
+an interface that would be intuitive and thus easily accessible. This structure assures the code is 
+readable, accessible, and extensible for any developer who could want to add improvements 
+or modifications in the future.   
